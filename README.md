@@ -25,7 +25,7 @@ Inspiration Wireframe:
 - switch player turns
 - spin wheel to possible outcomes
 - determine winner with all coins
-- output to console when winner is determined 
+- display who won to the user when a winner is determined
 - render new game
 
 ### Stretch Goals:
