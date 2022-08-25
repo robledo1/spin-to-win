@@ -1,0 +1,92 @@
+#player1{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+#player2{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+#spinButton{
+    background-color: lightgray;
+    font-size: medium;
+   position: absolute;
+   left: 15%;
+   top: 20px;
+    
+}
+#resetButton{
+    background-color: lightgray;
+    font-size: medium;
+    position: absolute;
+    left: 30%;
+    top: 20px;
+    
+}
+
+
+
+
+#displayBoard{
+
+    background-color: lightgrey;
+}
+
+#div1{
+background-color: darkolivegreen;
+text-align: center;
+padding: 3px;
+border-radius: 200px;
+
+left: 120px;
+width: 700px;
+
+
+
+
+}
+#div2{
+background-color: cadetblue;
+text-align: center;
+padding: 3px;
+border-radius: 200px;
+right: 120px;
+width: 700px;
+
+
+}
+h1{
+    text-align: center;
+}
+h2{
+    color: aliceblue;
+}
+#divButton{
+    
+    top :20px;
+    left: 20px;
+}
+
+#divReset{
+    
+}
+
+#secondDiv{
+    position: relative;
+
+}
+#result{
+    position: relative;
+    top: 50px;
+    font-size: larger;
+}
+#resultWords{
+    font-size: larger;
+}
+#pot1{
+    background-color:darkblue;
+    text-align: center;
+    padding: 3px;
+    border-radius: 200px;
+    right: 120px;
+    width: 700px;
+    
+    
+    }
