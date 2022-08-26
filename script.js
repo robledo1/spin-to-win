@@ -24,7 +24,7 @@ coinsInPot = document.getElementById("coinsInPot")
 
 
 coinsRemain1= document.getElementById("daCoins1")
-
+btnAddToPot = document.getElementById("btnAddToPot")
 
 
 
@@ -61,13 +61,7 @@ let num = document.querySelector('#num');
 
 
 
-// Get vaule of input when enter key pressed
 
-function search(ele) {
-  if(event.key === 'Enter') {
-      alert(ele.value);        
-  }
-}
 
 
 // functions describing what each game piece does
@@ -87,9 +81,9 @@ function win1(){
     player1coins += 1
     
    } else{
-      player2coins += 1
+    player2coins += 1
       
-    }
+  }
   pot -= 1
 
 }
@@ -99,9 +93,9 @@ function put1(){
     player1coins -= 1
     pot += 1
   }  else{
-      player2coins -= 1
-      pot += 1
-    }
+    player2coins -= 1
+    pot += 1
+  }
   
 }
 function put2(){
@@ -109,28 +103,25 @@ function put2(){
     player1coins -= 2
     pot += 2
   }  else{
-      player2coins +=2
-      pot += 2
-    }
+    player2coins -=2
+    pot += 2
+  }
   
 }
 function bothPut(){
-  if (currentPlayer === "player1"){
     player1coins -= 1
     pot += 1
-   } else{
-      player2coins -= 1
-      pot += 1
-    }
+    player2coins -= 1
+    pot += 1
   
 }
 function takePot() { 
   if (currentPlayer === "player1"){
-    player1coins += v
+    player1coins += pot
     pot = 0
    } else {
-      player2coins += v
-      pot
+      player2coins += pot
+      pot = 0
     }
   
 }
@@ -165,19 +156,28 @@ function spinButtonClicked () {
   player1Label.innerText=  winType[x]
 
 
-  // calculate score to pot
-  if (x === 0){ 
-    win2()
-
-  } else{
-
+  // check the value of random value x and call the correct function to perform the 
+  // game logic
+  switch(x){
+    case 0: win2(); break;
+    case 1: put2(); break;
+    case 2: win1(); break;
+    case 3: put1(); break;
+    case 4: takePot(); break;
+    case 5: bothPut(); break;
   }
+  // once the game logic is executed for a round we will show in the page the curreent 
+  // tally of coins for the players and the pot
+  showCoinCounts()
+  
+  
   //switch player turns
   if (currentPlayer === "player1"){
     currentPlayer = "player2"
   }else{
       currentPlayer = "player1"
   }
+
 }
 
 
@@ -188,32 +188,35 @@ element.addEventListener("click", spinButtonClicked)
 
 let daCoins = document.getElementById("daCoins1")
 let daCoinz = document.getElementById("daCoins2")
- 
-//functoin to get vaule of both text boxes into Pot of coins
-function getAllCoins (){
 
-  v1 = parseInt(txt1.value)
-  v2 = parseInt(txt2.value)
-  if(isNaN(v1) || isNaN(v2)){
-    coinsInPot.innerText = "Please put a valid coin value"
-  } else {
-    v = v1 + v2
-    coinsInPot.innerText = v
-     player1coins-= v1
-     player2coins-= v2
-     
-   daCoins1.innerText = player1coins
+// this function will show the number of coins each player has and the pot has
+function showCoinCounts(){
+  coinsInPot.innerText = pot
+  daCoins1.innerText = player1coins
    daCoins2.innerText = player2coins
-    //console.log( player1coins , player2coins)
-  }
 }
 
-txt1.addEventListener("keyup", getAllCoins)
-txt2.addEventListener("keyup", getAllCoins)
+//this function will get the value for the text boxes and add it to the current 
+// pot coin count and subtract from the corresponding player current coin count
+function btnAddToPotClicked(){
+  v1 = parseInt(txt1.value)
+  v2 = parseInt(txt2.value)
+  v = v1 + v2
+
+  pot += v
+  player1coins-= v1
+  player2coins-= v2
+  
+  showCoinCounts();
+  
+
+}
+
+btnAddToPot.addEventListener("click", btnAddToPotClicked)
+
+showCoinCounts()
 
 
-
-//
 
 
 
@@ -233,7 +236,7 @@ txt2.addEventListener("keyup", getAllCoins)
 
 // .get element by id to for player one have change to minus coins out into display box
 // first get a variable to store element
-remainingCoins1 = document.getElementById
+//remainingCoins1 = document.getElementById
 
 
 // keep track of coins each player has display player 

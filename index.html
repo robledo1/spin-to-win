@@ -11,6 +11,23 @@
 
 
  <body>
+<div id="aboutGame">
+    <h5>How to play:</h5>
+    <p>
+        1. Each	player	gets	10	chips to	start.
+        2. Everyone	puts	two	chips	in	the	center.		This	is	called	“the	pot”.
+        3. Choose	who	will	go	first.
+        4. The first player	spins they will then follow the instruction it lands on.
+        5. Once	the	first	player’s	turn	is	complete,	the	next	player	goes and	
+        so	on.
+        6. If	the	pot	only	has	one	or	two	chips	in	it,	everyone	must	put	2	
+        chips	in	at	the	same	time.		If	a	player	cannot	put	2	chips	in,	they	
+        are	out	of	the	game.	
+        7. Once	you	are	out	of	chips,	you	are	out	of	the	game.	
+        8. Continue	playing	until	you	have	a	winner.	
+        9. Winning:	The	last	player	who	has	coins	is	the	winner.</p>
+</div>
+
     
     <div id="displayBoard">
 
@@ -45,12 +62,12 @@
 
         <div id="divpot">
 
-            <h2 id="pot1">Coins in Pot</h2> 
+            <h2 id="pot1">Current Coins in Pot <p id="coinsInPot"> </p> </h2> 
             
             
 <div>
-    <p id="coinsInPot"> " "</p> 
-    <button id="btnAddToPot" disabled>Add to pot</button>
+    
+    <button id="btnAddToPot">Add to pot</button>
 </div>
 
 
@@ -66,7 +83,7 @@
     
         <div id="divButton">
 
-            <button id="spinButton" class="btn" >Spin 4 Win</button>
+            <button id="spinButton" class="btn">Spin 4 Win</button>
         
        
          </div>
